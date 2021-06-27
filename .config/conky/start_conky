@@ -1,0 +1,7 @@
+#!/bin/bash
+killall conky
+
+conky -c $HOME/.config/conky/conky_shortcuts_custom &&
+conky -c $HOME/.config/conky/conky_custom &&
+
+exit 0

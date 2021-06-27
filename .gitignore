@@ -1,0 +1,16 @@
+.config/*
+
+!.config/clipit/
+!.config/conky/
+!.config/discocss
+!.config/dunstrc
+!.config/epdfview
+!.config/gtk-3.0
+!.config/Kvantum
+!.config/lxsession
+!.config/lxsession-default-apps
+!.config/neofetch
+!.config/picom
+!.config/picom.conf
+!.config/polybar
+!.config/rofi

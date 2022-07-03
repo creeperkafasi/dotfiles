@@ -57,7 +57,7 @@ entry {
     placeholder-color:              #FFFFFF;
     expand:                         true;
     horizontal-align:               0;
-    placeholder:                    "find...";
+    placeholder:                    "Select Power Profile...";
 	padding: 						10px;
     border-radius:                  0px 12px 12px 0px;
     blink:                          true;
@@ -78,7 +78,7 @@ listview {
     background-color:               @al;
     padding:                        10px 10px 10px 10px;
     columns:                        1;
-    lines:                          6;
+    lines:                          3;
     spacing:                        5px;
     cycle:                          true;
     dynamic:                        true;
@@ -100,7 +100,7 @@ element {
     text-color:                     @fg;
     orientation:                    horizontal;
     border-radius:                  0px;
-    padding:                        6px 6px 6px -20px;
+    padding:                        6px 6px 6px -10px;
 }
 
 element-icon {
@@ -117,7 +117,7 @@ element-text {
 
 element selected {
     background-color:               @bg3;
-    text-color:                     @bg;
+    text-color:                     @fg;
 	border:							0px 0px 0px 0px;
     border-radius:                  12px;
     border-color:                  	@bg1;

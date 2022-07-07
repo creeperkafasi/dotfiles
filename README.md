@@ -1,4 +1,4 @@
-# Dotfiles
+# Dotfiles 💜🐙
 
 - [r/unixporn showcase post](https://www.reddit.com/r/unixporn/comments/vq2uso/i3/)
 

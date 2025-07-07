@@ -1,0 +1,95 @@
+// Derived from https://github.com/rubyowo/dotfiles/
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 47,
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces", "custom/music"],
+    "modules-center": ["custom/weather", "clock"],
+    "modules-right": ["network", "pulseaudio", "custom/brightnessctl", "battery", "privacy", "custom/lock", "tray"],
+    "hyprland/workspaces": {
+				"persistent-workspaces": {
+						"1": [],
+						"2": [],
+						"3": [],
+						"4": [],
+						"5": [],
+				}
+    },
+		"network": {
+				"format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+				"interval": 3,
+				"on-click": "gnome-system-monitor -r"
+		},
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "custom/music": {
+        "format": "  {}",
+        "escape": true,
+        "interval": 3,
+        "tooltip": true,
+        "exec": "playerctl metadata --format='{{ title }} - {{artist}}'",
+        "on-click": "playerctl play-pause",
+        "max-length": 30
+    },
+		"custom/weather": {
+		  "format": "{}°",
+			"tooltip": true,
+			"interval": 3600,
+			"exec": "wttrbar --lang tr --location İstanbul",
+			"return-type": "json"
+		},
+    "clock": {
+        "timezone": "Asia/İstanbul",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": " {:%d/%m/%Y}",
+        "format": " {:%H:%M:%S}",
+				"interval": 1,
+				"on-click-right": "gnome-calendar"
+    },
+    "custom/brightnessctl": {
+        // "device": "intel_backlight",
+				"exec": "/home/denizt/.config/waybar/brightness.sh",
+				"return-type": "json",
+				"interval": 1,
+				"on-scroll-up": "brightnessctl set +2%",
+				"on-scroll-down": "brightnessctl -n=1% set 2%-",
+        "format": "{icon} {percentage}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} %{capacity}",
+        "format-charging": "󰂄 %{capacity}",
+        "format-plugged": "󰂄",
+//        "format-alt": "{icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+				"on-click": ".config/waybar/powerprofiles.sh"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", " "]
+        },
+				"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol"
+    },
+    "custom/lock": {
+        "tooltip": false,
+        "on-click": "sh -c '(sleep 0.5s; hyprlock)' & disown",
+        "format": "",
+    },
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout &",
+        "format": "襤"
+    }
+}

@@ -1,0 +1,31 @@
+# General settings
+general {
+    layout = dwindle
+    gaps_in = 10
+    gaps_out = 20
+}
+
+# Monitor settings
+monitor = eDP-1, preferred, 1.0
+
+# Cursor
+input {
+    kb_layout = us
+    touchpad {
+        natural_scroll = true
+    }
+}
+
+# Autostart applications
+exec-once = waybar &
+exec-once = wofi -r &
+
+# Bindings
+bind = MOD, D, exec, wofi --show drun # Launcher
+
+# Appearance
+decoration {
+    rounding = 5
+    blur = false
+}
+

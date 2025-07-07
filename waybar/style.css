@@ -1,0 +1,105 @@
+@import "mocha.css";
+
+* {
+  font-family: Maple Mono NF;
+  font-size: 16px;
+  min-height: 0;
+}
+
+#waybar {
+  background: alpha(@base, 0.8);
+  color: @text;
+  margin: 5px;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @surface0;
+  margin-left: 0rem;
+}
+
+#workspaces button {
+  color: @green; 
+  background-color: @surface0;
+  border-radius: 1rem;
+}
+
+#workspaces button.active {
+  color: @yellow; 
+  border-radius: 1rem;
+}
+
+#workspaces button:hover {
+  color: @red; 
+  border-radius: 1rem;
+}
+
+#custom-music,
+#tray,
+#custom-brightnessctl,
+#clock,
+#battery,
+#pulseaudio,
+#custom-lock,
+#custom-power,
+#network {
+  background-color: @surface0;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+}
+
+#clock {
+  color: @green; 
+  border-radius: 1rem;
+}
+
+#network {
+  border-radius: 1rem;
+}
+
+#battery {
+  color: @green; 
+  border-radius: 0 1rem 1rem 0;
+  margin-right: 5px;
+}
+
+#battery.charging {
+  color: @green; 
+}
+
+#battery.warning:not(.charging) {
+  color: @red; 
+}
+
+#custom-brightnessctl {
+  color: @yellow; 
+  border-radius: 0;
+}
+
+#pulseaudio {
+  color: @green; 
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 0.2rem;
+}
+
+#custom-music {
+  border-radius: 1rem;
+}
+
+#custom-lock {
+  border-radius: 1rem;
+  color: @green; 
+  margin-right: 5px;
+}
+
+#custom-power {
+  margin-right: 5px;
+  border-radius: 0px 1rem 1rem 0px;
+  color: @red; 
+}
+
+#tray {
+  margin-right: 0.2rem;
+  border-radius: 1rem;
+}

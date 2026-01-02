@@ -43,10 +43,16 @@
 #pulseaudio,
 #custom-lock,
 #custom-power,
-#network {
+#network,
+#custom-dunst {
   background-color: @surface0;
   padding: 0.5rem 1rem;
   margin: 5px 0;
+}
+
+#custom-dunst {
+  margin-left: 0.5rem;
+  border-radius: 1rem;
 }
 
 #clock {

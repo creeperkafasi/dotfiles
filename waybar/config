@@ -6,7 +6,7 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "custom/music"],
-    "modules-center": ["custom/weather", "clock"],
+    "modules-center": ["custom/weather", "clock", "custom/dunst"],
     "modules-right": ["network", "pulseaudio", "custom/brightnessctl", "battery", "privacy", "custom/lock", "tray"],
     "hyprland/workspaces": {
 				"persistent-workspaces": {
@@ -47,8 +47,16 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": " {:%d/%m/%Y}",
         "format": " {:%H:%M:%S}",
-				"interval": 1,
-				"on-click-right": "gnome-calendar"
+			  "interval": 1,
+			  "on-click-right": "gnome-calendar"
+    },
+    "custom/dunst": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "/home/denizt/.config/waybar/dunst_status.sh",
+        "on-click": "/home/denizt/.config/waybar/dunst.sh",
+        "restart-interval": 1,
+        "signal": 1
     },
     "custom/brightnessctl": {
         // "device": "intel_backlight",

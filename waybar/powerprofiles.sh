@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-SELECT=$(asusctl profile -l | tail -n 3 | fuzzel --dmenu -w 15 -l 4)
+SELECT=$(asusctl profile list | tail -n 3 | fuzzel --dmenu -w 15 -l 4)
 
 if [ -z "$SELECT" ]; then
   exit 1
 fi
 
-asusctl profile -P $SELECT
+asusctl profile set $SELECT
 
 if [ "$SELECT" = "Quiet" ]; then
   hyprctl keyword monitor eDP-1,1920x1080@60.00Hz,0x0,1
